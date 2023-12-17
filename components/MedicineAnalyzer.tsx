@@ -19,7 +19,7 @@ const MedicineAnalyzer: React.FC<any> = () => {
 		setIsGenerated(newIsGenerated);
 	};
 
-	const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_VISION);
+	const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_VISION || 'default value');
 	async function run() {
 		setIsGenerating(true);
 		const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
